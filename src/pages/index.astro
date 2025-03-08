@@ -1,9 +1,44 @@
 ---
-import './src/styles/global.css'
-import Layout from '../layouts/Layout.astro';
+import "./src/styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
+import GitHubIcon from "../components/Icon/GitHubIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
 ---
 
 <Layout>
-	<main>
-	</main>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <img
+        class="rounded-full w-12 h-12 mb-4"
+        src="/public/photo.jpg"
+        alt="Juan Carlos foto"
+      />
+      <h1 class="text-5xl font-bold flex justify-center flex-row gap-x-4 pb-10">
+        Hey, soy Juan Carlos
+        <a
+          class="flex justify-center items-center"
+          href="https://www.linkedin.com/in/juan-olivera-gomez/"
+          target="_blank"
+          rel="noopener noreferrer"><Badge> Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-2xl opacity-80 text-wrap">
+       <span> +2 años de experiencia.</span> <span class="text-blue-400"> Programador Python y Analista de Datos.</span> 
+		<span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
+      </h2>
+	  
+	   <nav class="flex gap-x-4 mt-10 justify-center">
+			<SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
+				<LinkedInIcon class="rounded-full w-6 h-6" />
+				LinkedIn
+			</SocialPill>
+			<SocialPill href="https://github.com/juanito312">
+				<GitHubIcon class="rounded-full w-6 h-6" />
+				GitHub
+			</SocialPill>
+	   </nav>
+    </section>
+  </main>
 </Layout>

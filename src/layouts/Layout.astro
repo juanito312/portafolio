@@ -1,41 +1,47 @@
 ---
-import Header from  '../components/Header.astro'
+import Header from "../components/Header.astro";
 // Supports weights 100-900
-import '@fontsource-variable/roboto-condensed';
+import "@fontsource-variable/roboto-condensed";
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/brand-databricks.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Portafolio de Juan Carlos</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/brand-databricks.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Portafolio de Juan Carlos</title>
+  </head>
+  <body>
+    <div
+      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+    >
+      <div
+        class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-fuchsia-400 opacity-20 blur-[100px]"
+      >
+      </div>
+    </div>
+    <Header />
+    <slot />
+  </body>
 </html>
 
 <style>
-	:root{
+  :root {
+  }
 
-	}
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-
-	body{
-		display: flex;
-		justify-content: center;
-		/** Modificar el color de fondo del portafolio */
-		min-height: 100vh;
-		font-family: 'Roboto Condensed', sans-serif;
-	}
+  body {
+    display: flex;
+    flex-direction: column;
+    /** Modificar el color de fondo del portafolio */
+    min-height: 100vh;
+    font-family: "Roboto Condensed", sans-serif;
+  }
 </style>
