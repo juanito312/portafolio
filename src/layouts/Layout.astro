@@ -21,7 +21,7 @@ const {title, description} = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
     <div
       class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
     >
@@ -39,10 +39,11 @@ const {title, description} = Astro.props;
   :root {
   }
 
-  body {
+  html {
     margin: 0;
     width: 100%;
     height: 100%;
+
   }
 
   body {

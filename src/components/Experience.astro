@@ -1,0 +1,25 @@
+---
+import ExperienceItems from "./ExperienceItems.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Plataforma de generación de tickets",
+    company: "SITPE Soluciones",
+    location: "Manzanillo, Colima",
+    startDate: "Enero - 2024",
+    endDate: "Junio - 2024",
+    description:
+      "Se desarrolló una plataforma de gestión de tickets de soporte que permite a los usuarios adjuntar evidencias en diversos formatos. Se implementaron tres roles: usuario común, quien crea los tickets; usuario de soporte, encargado de asignarse y dar seguimiento a los tickets; y usuario administrador, quien supervisa el flujo del proceso para garantizar su correcto desarrollo. Además, se integró un sistema de notificaciones que informa tanto al usuario creador como al administrador sobre el estado de los tickets, logrando que el 80% de ellos reciban un seguimiento personalizado.",
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="mb-10 ms-6">
+        <ExperienceItems {...experience} />
+      </li>
+    ))
+  }
+</ol>

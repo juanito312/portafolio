@@ -6,12 +6,15 @@ import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
 import GitHubIcon from "../components/Icon/GitHubIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Mail from "../components/Icon/Mail.astro";
+import Experience  from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../components/Icon/BriefCase.astro";
 ---
 
 <Layout title="Portafolio de Juan Carlos - Programador Python y Analista de Datos"
   description="Contrata a Juan Carlos para tu próximo proyecto de programación o análisis de datos.">
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <SectionContainer class="py-44 pb-15">
       <img
         class="rounded-full size-12 mb-4"
         src="/public/photo.jpg"
@@ -28,24 +31,33 @@ import Mail from "../components/Icon/Mail.astro";
       </h1>
       <h2 class="text-2xl opacity-80 text-wrap">
        <span> +2 años de experiencia.</span> <span class="text-blue-400"> Programador Python y Analista de Datos.</span> 
-		<span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
+		  <span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
       </h2>
 	  
-	   <nav class="flex gap-x-4 mt-10 justify-center">
-			<SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
-				<LinkedInIcon class="rounded-full size-6" />
-				LinkedIn
-			</SocialPill>
-			<SocialPill href="https://github.com/juanito312">
-				<GitHubIcon class="rounded-full size-6" />
-				GitHub
-			</SocialPill>
-      <SocialPill href="#">
-				<Mail class="rounded-full size-6" />
-				Contacto
-			</SocialPill>
-	   </nav>
-    </section>
+      <nav class="flex gap-x-4 mt-10 justify-center">
+        <SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
+          <LinkedInIcon class="rounded-full size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/juanito312">
+          <GitHubIcon class="rounded-full size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="#">
+          <Mail class="rounded-full size-6" />
+          Contacto
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+  <!-- Linea de tiempo -->
+   <SectionContainer class="">
+    <h2 class="text-2xl font-bold mb-8 flex gap-x-2 items-center">
+      <BriefCase class="size-8" />
+      Experiencia Laboral
+    </h2>
+    <Experience />
+   </SectionContainer>
   </main>
 </Layout>
 
