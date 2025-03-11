@@ -5,17 +5,19 @@ import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
 import GitHubIcon from "../components/Icon/GitHubIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
+import Mail from "../components/Icon/Mail.astro";
 ---
 
-<Layout>
+<Layout title="Portafolio de Juan Carlos - Programador Python y Analista de Datos"
+  description="Contrata a Juan Carlos para tu próximo proyecto de programación o análisis de datos.">
   <main>
     <section class="w-full lg:w-[740px] mx-auto py-44">
       <img
-        class="rounded-full w-12 h-12 mb-4"
+        class="rounded-full size-12 mb-4"
         src="/public/photo.jpg"
         alt="Juan Carlos foto"
       />
-      <h1 class="text-5xl font-bold flex justify-center flex-row gap-x-4 pb-10">
+      <h1 id="titulo" class="text-5xl font-bold flex justify-center flex-row gap-x-4 pb-10">
         Hey, soy Juan Carlos
         <a
           class="flex justify-center items-center"
@@ -31,14 +33,20 @@ import SocialPill from "../components/SocialPill.astro";
 	  
 	   <nav class="flex gap-x-4 mt-10 justify-center">
 			<SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
-				<LinkedInIcon class="rounded-full w-6 h-6" />
+				<LinkedInIcon class="rounded-full size-6" />
 				LinkedIn
 			</SocialPill>
 			<SocialPill href="https://github.com/juanito312">
-				<GitHubIcon class="rounded-full w-6 h-6" />
+				<GitHubIcon class="rounded-full size-6" />
 				GitHub
+			</SocialPill>
+      <SocialPill href="#">
+				<Mail class="rounded-full size-6" />
+				Contacto
 			</SocialPill>
 	   </nav>
     </section>
   </main>
 </Layout>
+
+

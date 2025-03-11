@@ -2,16 +2,24 @@
 import Header from "../components/Header.astro";
 // Supports weights 100-900
 import "@fontsource-variable/roboto-condensed";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const {title, description} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/brand-databricks.svg" />
+    <link rel="icon" type="image/svg+xml" href="/slack.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Portafolio de Juan Carlos</title>
+    <title>{title}</title>
   </head>
   <body>
     <div
