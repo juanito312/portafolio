@@ -5,3 +5,4 @@
 ## Cre una breve descripción sobre mi trayectoria.
 ## Modificacón de estilos y nuevo fav icon en la pestaña.
 ## Agregamos la sección experiencia laboral, con un timeline y sus estilos.
+## Agreamos el contenido sobre la experiencia laboral.
