@@ -7,3 +7,4 @@
 ## Agregamos la sección experiencia laboral, con un timeline y sus estilos.
 ## Agreamos el contenido sobre la experiencia laboral.
 ## Footer integrado.
+## Agregando estilos responsive.
