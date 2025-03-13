@@ -9,6 +9,8 @@ import Mail from "../components/Icon/Mail.astro";
 import Experience  from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import BriefCase from "../components/Icon/BriefCase.astro";
+import ProjectIcon from "../components/Icon/ProjectIcon.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout title="Portafolio de Juan Carlos - Programador Python y Analista de Datos"
@@ -34,7 +36,7 @@ import BriefCase from "../components/Icon/BriefCase.astro";
 		  <span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
       </h2>
 	  
-      <nav class="flex justify-center items-center gap-x-4 mt-10  md:flex flex-wrap gap-3">
+      <nav class=" flex justify-center items-center gap-x-4 mt-10  md:flex flex-wrap gap-3">
         <SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
           <LinkedInIcon class="rounded-full size-6" />
           LinkedIn
@@ -50,7 +52,7 @@ import BriefCase from "../components/Icon/BriefCase.astro";
       </nav>
     </SectionContainer>
 
-  <!-- Linea de tiempo -->
+    <!-- Linea de tiempo -->
    <SectionContainer id="experiencia">
     <h2 class="text-2xl font-bold mb-8 flex gap-x-2 items-center">
       <BriefCase class="size-8" />
@@ -58,6 +60,15 @@ import BriefCase from "../components/Icon/BriefCase.astro";
     </h2>
     <Experience />
    </SectionContainer>
+
+   <!-- Sección Proyectos -->
+    <SectionContainer id="proyectos" class="py-20">
+    <h2 class="text-2xl font-bold mb-8 flex gap-x-2 items-center">
+      <ProjectIcon class="size-8" />
+       Proyectos
+    </h2>
+    <Projects />
+    </SectionContainer>
   </main>
 </Layout>
 

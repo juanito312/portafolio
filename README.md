@@ -8,3 +8,4 @@
 ## Agreamos el contenido sobre la experiencia laboral.
 ## Footer integrado.
 ## Agregando estilos responsive.
+## Se agrego la sección proyectos.
