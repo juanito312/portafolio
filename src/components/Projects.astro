@@ -8,79 +8,88 @@ import PreviewIcon from "./Icon/PreviewIcon.astro";
 import GitIcon from "./Icon/GitIcon.astro";
 
 const TAGS = {
-    HTML: {
-        name: "HTML",
-        class: "bg-[#f06529] text-white",
-        icon: HTMLIcon
-    },
-    PYTHON: {
-        name: "Python",
-        class: "bg-[#306998] text-white",
-        icon: PythonIcon
-    },
-    PHP:{
-        name: "PHP",
-        class: "bg-[#8892be] text-white",
-        icon: PHPIcon
-    },
-    BOOTSTRAP:{
-        name: "Bootstrap",
-        class: "bg-[#007bff] text-white",
-        icon: Bootstrap
-    },
-    JS:{
-        name: "JavaScript",
-        class: "bg-[#f0db4f] text-black",
-        icon: JsIcon
-    }
-
-}   
+  HTML: {
+    name: "HTML",
+    class: "bg-[#f06529] text-white",
+    icon: HTMLIcon,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#306998] text-white",
+    icon: PythonIcon,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#8892be] text-white",
+    icon: PHPIcon,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#007bff] text-white",
+    icon: Bootstrap,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-[#f0db4f] text-black",
+    icon: JsIcon,
+  },
+};
 
 const PROJECTS = [
-    {
-        title: "Plataforma de generación de tickets",
-        description: "Plataforma de generación de tickets para soporte. Permite a los usuarios generar tickets de soporte y a los administradores gestionarlos.",
-        link: "#",
-        github: "#",
-        image: "../public/photo.jpg",
-        tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.BOOTSTRAP, TAGS.JS],
-    },
-]
+  {
+    title: "Plataforma de generación de tickets",
+    description:
+      "Plataforma de generación de tickets para soporte. Permite a los usuarios generar tickets de soporte y a los administradores gestionarlos.",
+    link: "#",
+    github: "#",
+    image: "../public/proyecto_1.jpg",
+    tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.BOOTSTRAP, TAGS.JS],
+  },
+];
 ---
+
 {
-    PROJECTS.map((project) => (
-        <div class="flex flex-col md:flex-row gap-4 mt-10 h-full w-full">
-            <img
-                class="rounded-lg w-full md:w-1/3"
-                src={project.image}
-                alt={project.title}
-            />
-            <div class="flex flex-col gap-2 md:w-2/3">
-                <h3 class="text-2xl font-bold">{project.title}</h3>
-                <p class="text-lg text-pretty">{project.description}</p>
-                <div class="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                        <span class={`flex justify-center items-center gap-x-2 rounded-full text-xs py-1 px-2 ${typeof tag === 'object' ? tag.class : ''}`}>
-                            {typeof tag === 'object' && <tag class="icon"></tag> ? <tag.icon class="size-6" /> : null}
-                            {typeof tag === 'object' ? tag.name : tag}
-                        </span>
-                    ))}
-                </div>
-                <div class="flex gap-4">
-                    <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
-                        <PreviewIcon/>
-                        <a href={project.link
-                        ? project.link
-                        : "#"} class="">   Ver</a>
-                    </div>
-                    <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
-                        <GitIcon/>
-                        <a href={project.link
-                        ? project.link
-                        : "#"} class="">   Código</a>
-                    </div>
-                </div>
+  PROJECTS.map((project) => (
+    <div class="flex flex-row justify-center items-center flex-wrap gap-4 bg-white p-4 rounded-lg shadow-md">
+      <img
+        class="flex flex-col md:flex-row gap-4 mt-10 h-full w-full"
+        src={project.image}
+        alt={project.title}
+      />
+      <div class="flex flex-col md:flex-row gap-4 mt-10 h-full w-full">
+        <div class="flex flex-col gap-2 md:w-2/3">
+          <h3 class="text-2xl font-bold">{project.title}</h3>
+          <p class="text-lg text-pretty">{project.description}</p>
+          <div class="flex flex-wrap items-center gap-2">
+            {project.tags.map((tag) => (
+              <span
+                class={`flex justify-center items-center gap-x-2 rounded-full text-xs py-1 px-2 ${typeof tag === "object" ? tag.class : ""}`}
+              >
+                {typeof tag === "object" && <tag class="icon" /> ? (
+                  <tag.icon class="size-6" />
+                ) : null}
+                {typeof tag === "object" ? tag.name : tag}
+              </span>
+            ))}
+          </div>
+          <div class="flex gap-4">
+            <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
+              <PreviewIcon />
+              <a href={project.link ? project.link : "#"} class="">
+                {" "}
+                Ver
+              </a>
             </div>
+            <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
+              <GitIcon />
+              <a href={project.link ? project.link : "#"} class="">
+                {" "}
+                Código
+              </a>
+            </div>
+          </div>
         </div>
-    ))
+      </div>
+    </div>
+  ))
 }

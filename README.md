@@ -9,3 +9,4 @@
 ## Footer integrado.
 ## Agregando estilos responsive.
 ## Se agrego la sección proyectos.
+## Sección "Sobre mi" terminada y mejora en estilos.
