@@ -10,3 +10,4 @@
 ## Agregando estilos responsive.
 ## Se agrego la sección proyectos.
 ## Sección "Sobre mi" terminada y mejora en estilos.
+## Mejora en estilos en la sección de proyectos.
