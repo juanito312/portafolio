@@ -1,36 +1,60 @@
 ---
-
+import DarkMode from "./DarkMode.astro"
 ---
-<header class="flex justify-center items-center md:px-4 py-5 w-full xl:w-[1120px] mx-auto lg:max-w-2xl">
+
+<header
+  class="flex justify-center items-center md:px-4 py-5 w-full xl:w-[1120px] mx-auto lg:max-w-2xl"
+>
   <!-- Menu Hambuergesa -->
-  <nav id="menu" class="hidden md:flex flex-row gap-x-10">
+  <nav id="menu" class="flex flex-row gap-x-10">
     <ul class="flex flex-row gap-x-10 opacity-80">
-      <li>
+      <li class="hidden md:block">
         <a
           class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#top">Inicio</a>
+          href="#top">Inicio</a
+        >
       </li>
       <li>
         <a
           class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#sobre-mi">Sobre mi</a>
+          href="#sobre-mi">Sobre mi</a
+        >
       </li>
       <li>
         <a
           class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#experiencia">Experiencia</a>
+          href="#experiencia">Experiencia</a
+        >
       </li>
       <li>
         <a
           class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#proyectos">Proyectos</a>
+          href="#proyectos">Proyectos</a
+        >
       </li>
-      <li>
+      <li class="hidden md:block">
         <a
           class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="mailto:juancarlos.jcog63@gmail.com">Contacto</a>
+          href="mailto:juancarlos.jcog63@gmail.com">Contacto</a
+        >
+      </li>
+      <li>
+          <a href="">
+            <span class="sr-only">Cambiar a modo oscuro</span>
+            <DarkMode />
+          </a>
       </li>
     </ul>
   </nav>
 </header>
 
+<style>
+  @media (max-width: 640px) {
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+</style>
