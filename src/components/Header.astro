@@ -26,8 +26,29 @@ import DarkMode from "./DarkMode.astro";
       class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
       href="mailto:juancarlos.jcog63@gmail.com">Contacto</a
     >
+    <!-- Icono cambio de tema -->
+    <div class="relative ml-1 mr-1">
+      <button id="presioname" class="p-2 hover:cursor-pointer">
+        <DarkMode class="size-5" />
+      </button>
+    </div>
   </nav>
 </header>
+
+
+<!-- Cambio de tema -->
+<script>
+  // Constante del color dark system
+  const darkThem = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // Cambio de tema
+  const darkMode = document.getElementById("presioname");
+  if (darkMode) {
+    darkMode.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      console.log("Cambio de tema");
+    });
+  }
+</script>
 
 <style>
   ul {
