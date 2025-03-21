@@ -6,7 +6,7 @@ import LinkedInIcon from "../components/Icon/LinkedInIcon.astro";
 import GitHubIcon from "../components/Icon/GitHubIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Mail from "../components/Icon/Mail.astro";
-import Experience  from "../components/Experience.astro";
+import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import BriefCase from "../components/Icon/BriefCase.astro";
 import ProjectIcon from "../components/Icon/ProjectIcon.astro";
@@ -15,30 +15,40 @@ import AboutIcon from "../components/Icon/AboutIcon.astro";
 import About from "../components/About.astro";
 ---
 
-<Layout title="Portafolio de Juan Carlos - Programador Python y Analista de Datos"
-  description="Contrata a Juan Carlos para tu próximo proyecto de programación o análisis de datos.">
+<Layout
+  title="Portafolio de Juan Carlos - Programador Python y Analista de Datos"
+  description="Contrata a Juan Carlos para tu próximo proyecto de programación o análisis de datos."
+>
   <main class="px-4 lg:px-0">
     <SectionContainer class="md:py-44 pb-15">
-      <img
-        class="rounded-full size-12 mb-4 md:mx-10"
-        src="/public/photo.jpg"
-        alt="Juan Carlos foto"
-      />
-      <h1 id="titulo" class="md:text-4xl font-bold flex justify-center flex-row gap-x-4 pb-10 text-2xl lg:text-5xl">
+      <div class="flex gap-x-2 items-center">
+        <img
+          class="rounded-full size-12"
+          src="/public/photo.jpg"
+          alt="Juan Carlos foto"
+        />
+        <Badge>Disponible para trabajar</Badge>
+      </div>
+      <h1
+        id="titulo"
+        class="md:text-4xl font-bold flex-row gap-x-4 pb-10 text-2xl lg:text-5xl"
+      >
         Hey, soy Juan Carlos
         <a
           class="flex justify-center items-center"
           href="https://www.linkedin.com/in/juan-olivera-gomez/"
           target="_blank"
-          rel="noopener noreferrer"><Badge> Disponible para trabajar</Badge></a
-        >
+          rel="noopener noreferrer"></a>
       </h1>
       <h2 class="text-2xl opacity-80 text-wrap max-w-96 lg:max-w-2xl">
-       <span> +2 años de experiencia.</span> <span class="text-blue-400"> Programador Python y Analista de Datos.</span> 
-		  <span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
+        <span> +2 años de experiencia.</span>
+        <span class="text-blue-400">
+          Programador Python y Analista de Datos.</span
+        >
+        <span> De Mexico, Colima.</span> Con especialidad en Ciencia de Datos.
       </h2>
-	  
-      <nav class=" flex gap-x-4 mt-10  md:flex flex-wrap gap-3">
+
+      <nav class="flex gap-x-4 mt-10 md:flex flex-wrap gap-3">
         <SocialPill href="https://www.linkedin.com/in/juan-olivera-gomez/">
           <LinkedInIcon class="rounded-full size-6" />
           LinkedIn
@@ -55,21 +65,21 @@ import About from "../components/About.astro";
     </SectionContainer>
 
     <!-- Linea de tiempo -->
-   <SectionContainer id="experiencia">
-    <h2 class="text-3xl font-bold mb-8 flex gap-x-2 items-center">
-      <BriefCase class="size-8" />
-      Experiencia Laboral
-    </h2>
-    <Experience />
-   </SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-bold mb-8 flex gap-x-2 items-center">
+        <BriefCase class="size-8" />
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
 
-   <!-- Sección Proyectos -->
+    <!-- Sección Proyectos -->
     <SectionContainer id="proyectos" class="py-20">
-    <h2 class="text-3xl font-bold mb-8 flex gap-x-2 items-center">
-      <ProjectIcon class="size-8" />
-       Proyectos
-    </h2>
-    <Projects />
+      <h2 class="text-3xl font-bold mb-8 flex gap-x-2 items-center">
+        <ProjectIcon class="size-8" />
+        Proyectos
+      </h2>
+      <Projects />
     </SectionContainer>
 
     <!-- Sección Sobre mi -->
@@ -82,5 +92,3 @@ import About from "../components/About.astro";
     </SectionContainer>
   </main>
 </Layout>
-
-

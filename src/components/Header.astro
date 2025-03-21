@@ -1,60 +1,68 @@
 ---
-import DarkMode from "./DarkMode.astro"
+import DarkMode from "./DarkMode.astro";
 ---
 
 <header
-  class="flex justify-center items-center md:px-4 py-5 w-full xl:w-[1120px] mx-auto lg:max-w-2xl"
+  class=`fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2
+`
 >
-  <!-- Menu Hambuergesa -->
-  <nav id="menu" class="flex flex-row gap-x-10">
-    <ul class="flex flex-row gap-x-10 opacity-80">
-      <li class="hidden md:block">
-        <a
-          class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#top">Inicio</a
-        >
-      </li>
-      <li>
-        <a
-          class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#sobre-mi">Sobre mi</a
-        >
-      </li>
-      <li>
-        <a
-          class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#experiencia">Experiencia</a
-        >
-      </li>
-      <li>
-        <a
-          class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="#proyectos">Proyectos</a
-        >
-      </li>
-      <li class="hidden md:block">
-        <a
-          class="flex justify-center items-center hover:scale-110 transition hover:text-blue-800"
-          href="mailto:juancarlos.jcog63@gmail.com">Contacto</a
-        >
-      </li>
-      <li>
-          <a href="">
-            <span class="sr-only">Cambiar a modo oscuro</span>
-            <DarkMode />
-          </a>
-      </li>
-    </ul>
+  <nav
+    id="menu"
+    class="scroll flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+  >
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500 text-blue-500 font-semibold"
+      href="#experiencia">Experiencia</a
+    >
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
+      href="#proyectos">Proyectos</a
+    >
+    <a
+    class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
+    href="#sobre-mi">Sobre mi</a
+  >
+    <a
+      class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
+      href="mailto:juancarlos.jcog63@gmail.com">Contacto</a
+    >
   </nav>
 </header>
 
 <style>
+  ul {
+    gap: 1rem;
+  }
+
+  /** Scrool animacion */
+  .scroll {
+    position: fixed;
+    top: 2rem;
+    z-index: 10;
+    background-color: bga(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    backdrop-filter: blur(10px);
+  }
+
   @media (max-width: 640px) {
     ul {
       display: flex;
       flex-direction: row;
       justify-content: center;
+      item-align: center;
       gap: 1rem;
+    }
+  }
+
+  /** Scroll para pantallas pequeñas */
+  @media (max-width: 640px) {
+    .scroll {
+      top: 1rem;
+    }
+    body {
+      padding-top: 8rem;
     }
   }
 </style>
