@@ -1,5 +1,5 @@
 <div class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4">
-  <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">
+  <span class="text-sm sm:text-center dark:text-zinc-200/90">
     © 2021 Juan Carlos Olivera Gómez. Todos los derechos reservados.
   </span>
   <ul class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0">
@@ -14,7 +14,14 @@
 
 <style>
   @media (max-width: 640px) {
-    footer ul {
+    span{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    ul {
+      display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 1rem;

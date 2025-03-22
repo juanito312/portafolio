@@ -43,36 +43,44 @@ const PROJECTS = [
     link: "#",
     github: "#",
     image: "../public/project.png",
-    tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.BOOTSTRAP, TAGS.JS],
+    tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.JS],
   },
 ];
 ---
 
 {
   PROJECTS.map((project) => (
-    <div class="flex flex-col justify-center items-center flex-wrap gap-4 p-4">
-      <img
-        class="object-cover object-top w-full h-100 transition duration-500  sm:h-full md:scale-110 md:group-hover:scale-105 rounded-2xl"
-        src={project.image}
-        alt={project.title}
-      />
-      <div class="flex flex-col justify-center md:flex-row gap-4 mt-10 h-full w-full">
-        <div class="flex flex-col gap-2 md:w-2/3">
+    <div class="flex flex-col gap-y-16">
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <img
+            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 rounded-2xl"
+            src={project.image}
+            alt={project.title}
+          />
+        </div>
+        <div class="w-full md:w-1/2 md:max-w-lg">
           <h3 class="text-2xl font-bold">{project.title}</h3>
-          <p class="text-sm text-pretty">{project.description}</p>
-          <div class="flex flex-wrap items-center gap-2">
-            {project.tags.map((tag) => (
-              <span
-                class={`flex justify-center items-center gap-x-2 rounded-full text-xs py-1 px-2 ${typeof tag === "object" ? tag.class : ""}`}
-              >
-                {typeof tag === "object" && <tag class="icon" /> ? (
-                  <tag.icon class="size-6" />
-                ) : null}
-                {typeof tag === "object" ? tag.name : tag}
-              </span>
-            ))}
+          <div class="flex flex-wrap mt-2 tools">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {project.tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex justify-center items-center gap-x-2 rounded-full text-xs py-1 px-2  ${tag.class}`}
+                  >
+                    {typeof tag === "object" && <tag class="icon" /> ? (
+                      <tag.icon class="size-6" />
+                    ) : null}
+                    {typeof tag === "object" ? tag.name : tag}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div class="flex flex-row justify-center gap-4">
+          <div class="mt-2 text-gray-700 dark:text-gray-400">
+            {project.description}
+          </div>
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
             <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
               <PreviewIcon />
               <a href={project.link ? project.link : "#"} class="">
@@ -84,12 +92,12 @@ const PROJECTS = [
               <GitIcon />
               <a href={project.link ? project.link : "#"} class="">
                 {" "}
-                Código
+                Ver
               </a>
             </div>
-          </div>
+          </footer>
         </div>
-      </div>
+      </article>
     </div>
   ))
 }
