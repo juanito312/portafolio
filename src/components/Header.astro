@@ -1,5 +1,5 @@
 ---
-import DarkMode from "./DarkMode.astro";
+
 ---
 
 <header
@@ -19,36 +19,24 @@ import DarkMode from "./DarkMode.astro";
       href="#proyectos">Proyectos</a
     >
     <a
-    class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
-    href="#sobre-mi">Sobre mi</a
-  >
+      class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
+      href="#sobre-mi">Sobre mi</a
+    >
     <a
       class="relative block px-2 py-2 transition hover:text-blue-500 font-semibold"
       href="mailto:juancarlos.jcog63@gmail.com">Contacto</a
     >
     <!-- Icono cambio de tema -->
     <div class="relative ml-1 mr-1">
-      <button id="presioname" class="p-2 hover:cursor-pointer">
-        <DarkMode class="size-5" />
+      <button
+        id="theme-toggle"
+        class="p-2 hover:cursor-pointer hover:text-blue-500"
+      >
+        <span id="icon" class="flex hover:scale-110 transition">🌞</span>
       </button>
     </div>
   </nav>
 </header>
-
-
-<!-- Cambio de tema -->
-<script>
-  // Constante del color dark system
-  const darkThem = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // Cambio de tema
-  const darkMode = document.getElementById("presioname");
-  if (darkMode) {
-    darkMode.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      console.log("Cambio de tema");
-    });
-  }
-</script>
 
 <style>
   ul {
@@ -63,7 +51,7 @@ import DarkMode from "./DarkMode.astro";
     background-color: bga(255, 255, 255, 0.8);
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+
     backdrop-filter: blur(10px);
   }
 
@@ -86,4 +74,67 @@ import DarkMode from "./DarkMode.astro";
       padding-top: 8rem;
     }
   }
+
+  /** Estilo para el modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    .scroll {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+    }
+  }
+
+  /** Clase personalizada para alternar manualmente el tema */
+  body.dark-mode {
+    background-color: #1a202c;
+    color: white;
+  }
+
+  body.ligth-mode {
+    background-color: white;
+    color: black;
+  }
 </style>
+
+<!-- Cambio de tema -->
+<script>
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("icon");
+
+  // Detectar las preferencias del sistema
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Guardar el tema en el almacenamineto local
+  const currentTheme = localStorage.getItem("theme");
+
+  // Aplicar el tema guardado
+  if (currentTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    if (icon) {
+      icon.textContent = "🌙"; // Icono de luna
+    }
+  } else if (currentTheme === "light") {
+    document.body.classList.add("light-mode");
+    if (icon) {
+      icon.textContent = "🌞"; // Icono de sol
+    }
+  }
+
+  // Alternar el tema con el botón
+  themeToggleBtn?.addEventListener("click", () => {
+    if (document.body.classList.contains("dark-mode")) {
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+      if (icon) {
+        icon.textContent = "🌞";
+      }
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+      if (icon) {
+        icon.textContent = "🌙";
+      }
+      localStorage.setItem("theme", "dark");
+    }
+  });
+</script>
