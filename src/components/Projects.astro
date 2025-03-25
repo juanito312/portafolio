@@ -6,6 +6,9 @@ import Bootstrap from "./Icon/Bootstrap.astro";
 import JsIcon from "./Icon/JsIcon.astro";
 import PreviewIcon from "./Icon/PreviewIcon.astro";
 import GitIcon from "./Icon/GitIcon.astro";
+import ProjectIcon from "./Icon/ProjectIcon.astro";
+
+const { class: className } = Astro.props;
 
 const TAGS = {
   HTML: {
@@ -36,33 +39,38 @@ const TAGS = {
 };
 
 const PROJECTS = [
+{
+    title: "Ciencia de Datos",
+    description:"Actulamente trabajando en este proyecto....",
+    link: "",
+    github: "",
+    image: "../public/data_scients.webp",
+    tags: [TAGS.PYTHON],
+  },
   {
     title: "Plataforma de generación de tickets",
     description:
       "Plataforma de generación de tickets para soporte. Permite a los usuarios generar tickets de soporte y a los administradores gestionarlos.",
-    link: "#",
-    github: "#",
+    link: "",
+    github: "",
     image: "../public/project.png",
-    tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.JS],
+    tags: [TAGS.HTML, TAGS.PYTHON, TAGS.PHP, TAGS.BOOTSTRAP, TAGS.JS],
   },
 ];
 ---
 
 {
   PROJECTS.map((project) => (
-    <div class="flex flex-col gap-y-16">
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <img
-            class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 rounded-2xl"
-            src={project.image}
-            alt={project.title}
-          />
-        </div>
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl text-blue-500 dark:text-white font-bold">{project.title}</h3>
+      <div class="flex flex-col mt-10 p-4 rounded-lg bg-white dark:bg-black/50 shadow-xl hover:shadow-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+        <article class="flex flex-col">
+          <div class="flex flex-row justify-center w-full h-full">
+            <img class="rounded-lg" src={project.image} alt={project.title} />
+          </div>
+          <div>
+            <h3 class="mt-2 font-bold text-2xl text-blue-500">{project.title}</h3>
+          </div>
           <div class="flex flex-wrap mt-2 tools">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-wrap gap-2 mb-2 gap-x-2">
               {project.tags.map((tag) => (
                 <li>
                   <span
@@ -78,26 +86,27 @@ const PROJECTS = [
             </ul>
           </div>
           <div class="mt-2 text-gray-700 dark:text-gray-400">
-            {project.description}
+            <p class="text-pretty">{project.description}</p>
           </div>
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
-              <PreviewIcon />
-              <a href={project.link ? project.link : "#"} class="">
-                {" "}
-                Ver
-              </a>
-            </div>
-            <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
-              <GitIcon />
-              <a href={project.link ? project.link : "#"} class="">
-                {" "}
-                Ver
-              </a>
-            </div>
+          <footer class="flex flex-row justify-center mt-4 gap-x-4">
+            {
+              project.link && (
+                <div  class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
+                  <PreviewIcon />
+                  <a href={project.link} class="">Ver</a>
+                </div>
+              )
+            }
+            {
+              project.github && (
+                <div class="flex w-30 justify-center items-center gap-x-2 mt-4 bg-black/10 p-2 rounded-lg py-2 px-4 hover:text-white hover:bg-black transition">
+                  <GitIcon />
+                  <a href={project.github} class="">Código</a>
+                </div>
+              )
+            }
           </footer>
-        </div>
-      </article>
-    </div>
+        </article>
+      </div>
   ))
 }
